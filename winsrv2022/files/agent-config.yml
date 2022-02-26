@@ -1,0 +1,42 @@
+version: 1.0
+config:
+- stage: boot
+  tasks:
+  - task: extendRootPartition
+- stage: preReady
+  tasks:
+  - task: activateWindows
+    inputs:
+      activation:
+        type: amazon
+  - task: setDnsSuffix
+    inputs:
+      suffixes:
+      - $REGION.ec2-utilities.amazonaws.com
+      - mydnssuffix1.de
+      - mydnssuffix2.com
+  - task: setAdminAccount
+    inputs:
+      password:
+        type: random
+  - task: setWallpaper
+    inputs:
+      attributes:
+      - hostName
+      - instanceId
+      - privateIpAddress
+      - publicIpAddress
+      - instanceSize
+      - availabilityZone
+      - architecture
+      - memory
+      - network
+      - osProductName
+      path: C:\Windows\Web\Wallpaper\Windows\img1.jpg
+- stage: postReady
+  tasks:
+  - task: startSsm
+  - task: setHostName
+    inputs:
+      reboot: false
+      hostName: SETWINHOSTNAME
