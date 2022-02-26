@@ -15,7 +15,7 @@ Why I use an S3 bucket? If you want to download software packages into the AMI i
 ## Adjustments to the configuration files
 
 * **windows-server.pkr.hcl** --> Variables (profile, ami_name, instance_type, name, region)
-* **windows-server.pkr.hcl** --> iam_instance_profile = "IAM INSTANCE PROFILE NAME"
+* **windows-server.pkr.hcl** --> iam_instance_profile = "IAM INSTANCE PROFILE NAME" https://github.com/hth73/hth-terraform/tree/main/services/packer-swdepot-s3
 * **files/agent-config.yml** --> hostName: Set your new Windows Hostname https://docs.aws.amazon.com/en_us/AWSEC2/latest/WindowsGuide/ec2launch-v2-settings.html
 * **files/img1.jpg** --> Change your Server Wallpaper Image if you want
 * copy **files/config_server.ps1** to your S3 Bucket, or change the script to copy the file to the AMI image in advance to run it remotely.

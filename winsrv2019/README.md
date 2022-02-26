@@ -13,6 +13,9 @@ Why I use an S3 bucket? If you want to download software packages into the AMI i
 
 ## Adjustments to the configuration files
 
+* **windows-server.pkr.hcl** --> Variables (profile, ami_name, instance_type, name, region)
+* **windows-server.pkr.hcl** --> iam_instance_profile = "IAM INSTANCE PROFILE NAME" https://github.com/hth73/hth-terraform/tree/main/services/packer-swdepot-s3
+
 ## Script execution
 
 ```bash
