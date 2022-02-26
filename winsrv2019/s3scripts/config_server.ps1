@@ -1,8 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
-# Description: Microsoft PowerShell script to deploy UIPath Orchestrator Server
-# Author: Helmut Thurnhofer @jambit GmbH
+# Description: Microsoft PowerShell script to deploy Windows Server Settings
+# Author: Helmut Thurnhofer
 # Date: 23.11.2021
-# Comment:
 # ----------------------------------------------------------------------------------------------------
 Clear-Host
 
@@ -32,7 +31,7 @@ Function Install-ScriptModule {
 
   If($CheckNuGet -eq $false){
     Write-Host "Installing NuGet PackageProvider..." -ForegroundColor Green
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Verbose:$false -Confirm:$false -Force
   }
 
   If ($Null -eq (Get-Module -ListAvailable -Name $Name)) {
