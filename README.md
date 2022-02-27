@@ -10,5 +10,6 @@ Here you can find a few packer examples.
 
 * [Windows Server 2019 - AWS AMI](winsrv2019/)
 * [Windows Server 2022 - AWS AMI](winsrv2022/)
+* [Ubuntu 20.04 - AWS AMI](ubuntu2004/)
 
 ---
